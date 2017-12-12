@@ -8,7 +8,9 @@ get('/') do
 end
 
 get('/:move1/:move2') do
-  game = Game.new(params[:move1], params[:move2])
+  move1 = params[:move1].downcase()
+  move2 = params[:move2].downcase()
+  game = Game.new(move1, move2)
   @result = game.play()
   erb(:result)
 end

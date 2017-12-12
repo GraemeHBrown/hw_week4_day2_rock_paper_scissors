@@ -2,8 +2,8 @@
 class Game
 
   def initialize(move1, move2)
-      @move1 = move1
-      @move2 = move2
+    @move1 = move1
+    @move2 = move2
   end
 
   def play()
@@ -19,8 +19,15 @@ class Game
       return 'paper wins'
     elsif @move1 == 'rock' && @move2 == 'scissors'
       return 'rock wins'
+    elsif @move1 == 'scissors' && @move2 == 'scissors'
+      return 'draw'
+    elsif @move1 == 'scissors' && @move2 == 'rock'
+      return 'rock wins'
+    elsif @move1 == 'scissors' && @move2 == 'paper'
+      return 'scissors wins'
+    else
+      return 'Invalid move. Try again'
     end
-
   end
 
 

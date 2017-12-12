@@ -10,6 +10,9 @@ class TestGame < MiniTest::Test
     @rock_draws_with_itself = Game.new('rock', 'rock')
     @rock_paper_paper_wins = Game.new('rock', 'paper')
     @rock_scissors_rock_wins = Game.new('rock', 'scissors')
+    @scissors_draws_with_itself = Game.new('scissors', 'scissors')
+    @scissors_rock_rock_wins = Game.new('scissors', 'rock')
+    @scissors_paper_scissors_wins = Game.new('scissors','paper')
   end
 
   def test_paper_paper_returns_draw()
@@ -33,8 +36,19 @@ class TestGame < MiniTest::Test
   end
 
   def test_rock_scissors_rock_wins()
-    assert_equal('rock wins', @rock_paper_paper_wins.play())
+    assert_equal('rock wins', @rock_scissors_rock_wins.play())
   end
 
+  def test_scissors_scissors_returns_draw()
+    assert_equal('draw', @scissors_draws_with_itself.play())
+  end
+
+  def test_scissors_rock_rock_wins()
+    assert_equal('rock wins', @scissors_rock_rock_wins.play())
+  end
+
+  def test_scissors_paper_scissors_wins()
+    assert_equal('scissors wins', @scissors_paper_scissors_wins.play())
+  end
 
 end
