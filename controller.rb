@@ -7,6 +7,10 @@ get('/') do
   erb(:home)
 end
 
+get('/home') do
+  erb(:home)
+end
+
 get('/:move1/:move2') do
   move1 = params[:move1].downcase()
   move2 = params[:move2].downcase()
