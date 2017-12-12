@@ -1,6 +1,4 @@
 
-require('sinatra/contrib/all')
-
 class Game
 
   def initialize(move1, move2)
@@ -14,9 +12,13 @@ class Game
     elsif @move1 == 'paper' && @move2 == 'rock'
       return 'paper wins'
     elsif @move1 == 'paper' && @move2 == 'scissors'
-      return 'paper loses'
+      return 'scissors wins'
     elsif @move1 == 'rock' && @move2 == 'rock'
       return 'draw'
+    elsif @move1 == 'rock' && @move2 == 'paper'
+      return 'paper wins'
+    elsif @move1 == 'rock' && @move2 == 'scissors'
+      return 'rock wins'
     end
 
   end
