@@ -26,7 +26,7 @@ class Game
     elsif @move1 == 'scissors' && @move2 == 'paper'
       return 'scissors wins'
     else
-      return 'Invalid move. Try again'
+      return 'Invalid move.'
     end
   end
 
