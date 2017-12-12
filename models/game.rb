@@ -15,6 +15,8 @@ class Game
       return 'paper wins'
     elsif @move1 == 'paper' && @move2 == 'scissors'
       return 'paper loses'
+    elsif @move1 == 'rock' && @move2 == 'rock'
+      return 'draw'
     end
 
   end
